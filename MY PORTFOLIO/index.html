@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D Sharanya | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;600&display=swap" rel="stylesheet">
+
+
+
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- Mobile hamburger (right) -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Slide-in Sidebar (right, 50% width) -->
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+      &times;
+    </button>
+    <ul class="sidebar-links">
+      <li><a href="#home" class="side-link">Home</a></li>
+      <li><a href="#about" class="side-link">About Me</a></li>
+      <li><a href="#skills" class="side-link">Skills</a></li>
+      <li><a href="#projects" class="side-link">Projects</a></li>
+      <li><a href="#contact" class="side-link">Contact</a></li>
+    </ul>
+  </aside>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <!-- HOME -->
+  <section class="home" id="home">
+    <div class="home-text">
+      <h5>Hello, It's Me</h5> <br>
+      <h1> D Sharanya</h1>
+      <h3>AI | <span>Web & Technology</span></h3>
+      <p>I love exploring AI, web, and emerging tech. I enjoy sharing ideas, collaborating <br> and learning at my own pace while staying innovative.</p>
+  
+      <a href="#about" class="btn-explore">Explore</a>
+    </div>
+    <div class="home-img">
+        <img src="portfolio image.jpg" alt="Sharanya">
+      </div>
+  </section>
+  
+
+  <!-- ABOUT (Parallax) -->
+  <section id="about" class="section parallax">
+    <h2>About Me</h2>
+    <div class="about-card fade-in">
+      <p>
+        I am Sharanya, currently pursuing a B.Tech degree with a specialization in Artificial Intelligence and Machine Learning. My academic journey has nurtured a strong foundation in computer science, while also fueling my passion for AI, web development, and the latest advancements in technology. I enjoy staying curious, exploring innovative ideas, and engaging in meaningful collaborations that drive growth and creativity.
+        I strongly believe in the power of self-paced learning, which allows me to adapt quickly, gain in-depth knowledge, and consistently stay ahead in this fast-evolving digital world. With a mindset focused on innovation and continuous improvement, I aim to contribute to impactful projects and be part of transformative technological progress.      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS (Parallax) -->
+  <section id="skills" class="section parallax">
+    <h2>Skills</h2>
+    <div class="skills-panels">
+      <article class="skill-panel fade-left">
+        <div class="panel-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="panel-body">
+          <h3>AI</h3>
+          <p>Python · ML Basics · Data Handling · Problem Solving</p>
+        </div>
+      </article>
+      <article class="skill-panel fade-right">
+        <div class="panel-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="panel-body">
+          <h3>Web Development</h3>
+          <p>HTML · CSS · JavaScript · Responsive Layouts</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS (Parallax) -->
+  <section id="projects" class="section parallax">
+    <h2>Projects</h2>
+    <div class="projects-row">
+      <div class="project-card fade-left">
+        <h3>Python Voice Bot</h3>
+        <p>
+          A Python-based voice assistant using speech recognition and TTS that can answer
+          queries, tell time, and open websites.
+        </p>
+      </div>
+      <div class="project-card fade-right">
+        <h3>Indian Entrepreneurs</h3>
+        <p>
+          A neat, informative website showcasing the stories and milestones of Indian
+          entrepreneurs with a clean UI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (Parallax) -->
+  <section id="contact" class="section parallax">
+    <h2>Contact</h2>
+    <div class="contact-grid fade-in">
+      <div class="contact-item">
+        <i class="fa-brands fa-linkedin"></i>
+        <a href="https://linkedin.com/in/your-link" target="_blank">linkedin.com/in/your-link</a>
+      </div>
+      <div class="contact-item">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://instagram.com/your-handle" target="_blank">@your-handle</a>
+      </div>
+      <div class="contact-item">
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/your-username" target="_blank">github.com/your-username</a>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:you@example.com">you@example.com</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

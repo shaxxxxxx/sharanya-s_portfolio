@@ -1,0 +1,508 @@
+/* ========== THEME ========== */
+:root{
+    --beige: #f6f1ec;
+    --navy:  #000000;
+    --card:  #FFFFFF;
+    --gold:  #B08C5B;      /* warm accent */
+    --shadow: 0 12px 24px rgba(0,0,0,.08);
+  }
+
+  @keyframes glow {
+    0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #000000; }
+    10% { text-shadow: 0 0 20px #DDA15E, 0 0 40px #B08C5B; }
+    20% { text-shadow: 0 0 5px #DDA15E, 0 0 10px #feffff; }
+  }
+
+  @keyframes glowPink {
+    0% { text-shadow: 0 0 5px #B08C5B, 0 0 10px #B08C5B; }
+    100% { text-shadow: 0 0 20px #B08C5B, 0 0 40px #B08C5B; }
+  }
+
+  @keyframes floatImage {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px); /* moves image slightly up */
+    }
+    100% {
+      transform: translateY(0px);   /* comes back down */
+    }
+  }
+
+
+  .home h1 {
+    color: #fff;
+    animation: glow 1.5s infinite ;
+    font-weight: bolder;
+  }
+  
+  
+  /* ========== RESET ========== */
+  *{ box-sizing:border-box; 
+    margin:0; 
+    padding:0;
+    scroll-behavior: smooth;
+ }
+  html,body{ height:100%; }
+  body{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--beige);
+    color:#222;
+    line-height:1.6;
+    scroll-behavior:smooth;
+    font-family: 'Jura', sans-serif;
+    font-weight: 700;
+  }
+  img{ max-width:100%; display:block; }
+  
+  /* account for fixed navbar when anchor-jumping */
+  section{ scroll-margin-top: 84px; }
+  
+  /* ========== NAVBAR ========== */
+  .navbar{
+    position:fixed; inset:0 0 auto 0;
+    height:64px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 24px;
+    background: var(--navy);
+    color:#fff; z-index:1000;
+  }
+  .brand{ font-weight:800; letter-spacing:.3px; }
+  .nav-links{ list-style:none; display:flex; gap:22px; }
+  .nav-links a{ color:#fff; text-decoration:none; font-weight:600; }
+  .nav-links a:hover{ color:var(--beige); }
+
+
+  
+  
+  /* mobile hamburger (right) */
+  .hamburger{
+    display:none;
+    background:none; border:none; color:#fff; font-size:22px; cursor:pointer;
+  }
+  
+  /* ========== SIDEBAR (RIGHT, 50%) ========== */
+  .sidebar{
+    position:fixed; top:0; right:0;
+    height:100dvh; width:50%;
+    max-width: 420px; min-width: 300px;
+    background: #172C46;
+    transform: translateX(100%);
+    transition: transform .35s ease;
+    z-index: 1200; padding: 20px 22px;
+  }
+  .sidebar.open{ transform: translateX(0); }
+  .close-btn{
+    position:absolute; top:12px; right:16px;
+    background:none; border:none; color:#fff; font-size:30px; cursor:pointer;
+  }
+  .sidebar-links{
+    list-style:none; margin-top:64px; display:flex; flex-direction:column; gap:18px;
+  }
+  .sidebar-links a{
+    color:#fff; text-decoration:none; font-weight:700; font-size:1.05rem;
+  }
+  
+  /* overlay behind sidebar */
+  .overlay{
+    position:fixed; inset:0; background: rgba(0,0,0,.35);
+    opacity:0; pointer-events:none; transition: opacity .3s ease; z-index:1100;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+  
+  
+
+  /* Background image */
+  .home-inner{
+    width:100%;
+    display:grid; align-items:center;
+    grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 6vw, 64px);
+  }
+  .home-text{ text-align:left; }
+  .home-text h1{
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--navy);
+    line-height:1.1;
+    margin-left: 15%;
+    font-family: 'Michroma', sans-serif;
+
+  }
+  .subtitle{
+    margin-left: 15%;
+    font-family: 'Michroma', sans-serif;
+    font-weight: bold;
+  }
+  .subtitle{
+    margin-top:12px; color:#333; font-weight:600;
+    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+
+  }
+  .home-image img{
+    width: clamp(240px, 32vw, 380px);
+    border-radius: 16px; box-shadow: var(--shadow);
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-12px); }
+  }
+  
+  /* ========== GENERIC SECTIONS ========== */
+  .section{
+    min-height: 100vh;
+    padding: 96px clamp(16px, 6vw, 80px);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+  }
+  h2{
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    color:#B08C5B; margin-bottom: 28px;
+  }
+  
+  /* Parallax look */
+  .parallax{
+    background-image: url("images/parallax-bg.jpg");  /* replace as needed */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* ========== ABOUT CARD ========== */
+  .about-card{
+    max-width: 760px;
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px 28px;
+    color:#B08C5B;
+  }
+  
+  /* ========== SKILLS: EXACTLY TWO RECTANGULAR PANELS ========== */
+
+  .skills-panels{
+    width: 100%;
+    max-width: 1200px;
+    display:grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .skill-panel{
+    height: clamp(190px, 28vw, 260px);       /* tall rectangular like your ref */
+    background: var(--gold); color:#fff;
+    border-radius: 14px; box-shadow: var(--shadow);
+    display:grid; grid-template-columns: 96px 1fr; align-items:center;
+    padding: 24px 28px;
+  }
+  .skill-panel .panel-icon{
+    display:flex; align-items:center; justify-content:center; font-size: 42px;
+  }
+  .skill-panel .panel-body{ text-align:left; }
+  .skill-panel h3{ font-size: clamp(1.4rem, 2.4vw, 2rem); margin-bottom:6px; line-height:1.2; }
+  .skill-panel p{ opacity:.95; }
+  
+  /* ========== PROJECTS: TWO RECTANGULAR CARDS ========== */
+  .projects-row{
+    width:100%; max-width: 1100px;
+    display:grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  }
+  .project-card{
+    background: var(--card); border-radius: 14px; box-shadow: var(--shadow);
+    text-align:left; padding: 26px 28px;
+    height: clamp(180px, 26vw, 220px);      /* rectangular */
+    display:flex; flex-direction:column; justify-content:center;
+    color:#B08C5B;
+  }
+  .project-card h3{ margin-bottom:8px; color:black; }
+  
+  /* ========== CONTACT ========== */
+  section.parallax h2{
+    font-weight: bolder;
+  }
+  .contact-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; width:100%; max-width: 1000px;
+  }
+  .contact-item{
+    background: var(--card); border-radius: 12px; box-shadow: var(--shadow);
+    font-weight: bolder;
+    padding: 20px 16px;
+  }
+  .contact-item i{ font-size: 28px; color: var(--navy); margin-bottom: 10px; }
+  .contact-item a{ display:block; word-break: break-word; color:#222; text-decoration:none; font-weight:600; }
+  .contact-item a:hover{ color:#444; }
+  
+  /* ========== FADE-IN ON SCROLL ========== */
+  .fade-in, .fade-left, .fade-right{
+    opacity:0; transform: translateY(24px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .fade-left{ transform: translateX(-40px); }
+  .fade-right{ transform: translateX(40px); }
+  .show{ opacity:1; transform:none; }
+  
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px){
+    .projects-row{ gap:22px; }
+    .skills-panels{ gap:22px; }
+  }
+  
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .hamburger{ display:block; }
+    .home-inner{ grid-template-columns: 1fr; text-align:center; }
+    .home-text{ text-align:center; }
+    .skills-panels, .projects-row{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  
+  @media (max-width: 560px){
+    .contact-grid{ grid-template-columns: 1fr; }
+    .skill-panel{ grid-template-columns: 72px 1fr; }
+    .sidebar{ width: 50%; min-width: 260px; } /* still half-screen feel on tiny phones */
+  }
+
+/* Parallax Section Background */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  section:nth-child(even) {
+    background: #f5f5dc; /* Beige for alternate sections */
+    
+  }
+  
+  section:nth-child(odd) {
+    background: url('portfolio_vd.mp4') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff; /* Makes text visible on textured background */
+  }
+
+
+/* Hero Layout */
+/* Home Section */
+.home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    color: rgb(0, 0, 0);
+
+  }
+  
+  
+
+  
+  /* Content should appear above overlay */
+  .home .content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* Text side */
+  .home-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem; /* adds gap below name */
+    margin-left: -1%;
+  }
+  
+  .home-text h3 {
+    margin-top: 0.8rem; /* adds clean spacing */
+    margin-bottom: 1rem; 
+  }
+  
+  
+  /* Image side */
+  .home-img img {
+    width: 425px;        /* same width */
+    height: 425px;       /* same height */
+    border-radius: 50%;  /* makes it a circle */
+    object-fit: cover;   /* crop and fit inside circle */
+    box-shadow: 0 8px 20px rgba(188, 108, 37,0.5);
+    margin-left: -10%; 
+  }
+  
+
+  .btn-explore {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #111;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 1.5rem;  /* ⬅️ pushes button down */
+  }
+  
+  
+  .btn-explore:hover {
+    background: #444;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+  
+  .home img {
+    animation: floatImage 4s ease-in-out infinite;
+  }
+  
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  /* Tablet & below */
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column;   /* stack vertically */
+      text-align: center;       /* center the text */
+    }
+  
+    .home h1 {
+      font-size: 2rem;          /* smaller heading */
+    }
+  
+    .home h2 {
+      font-size: 1.5rem;        /* sub-heading */
+    }
+  
+    .home p {
+      font-size: 1rem;          /* normal text */
+      line-height: 1.6;         /* better readability */
+    }
+  
+    .home-img img {
+      max-width: 100%;
+      height: auto;       /* keeps natural ratio */
+      display: block;
+      margin: 0 auto;     /* centers the image */
+      border-radius: 50%; /* optional if you want a circle */
+    }
+    
+  }
+  
+  /* Mobile (very small screens) */
+  @media (max-width: 480px) {
+    .home h1 {
+      font-size: 1.8rem;
+      margin-top: 30%;
+    }
+
+    .home h5{
+      margin-top:30%;
+    }
+  
+    .home h2 {
+      font-size: 1.2rem;
+    }
+  
+    .home p {
+      font-size: 0.9rem;
+    }
+  
+    .home-img img {
+      max-width: 300px; 
+      max-height: 280px;
+      margin-left: 3%;
+    }
+  }
+
+  .home h1,
+.home h2,
+.home p,
+.home-img img {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+.home h1,
+.home h5 {
+  margin: 0;      /* removes top + bottom margin */
+  padding: 0;
+}
+
+/* then control spacing yourself */
+.home h5 {
+  margin-top: 80px;  /* small gap below "Hello, It's Me" */
+}
+
+.home h1 {
+  margin-top: 0;   /* no extra gap above h1 */
+}
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;  /* slightly larger */
+  object-fit: cover;
+  transform: translateY(-20%); /* starting offset */
+}
+
+@media (max-width: 768px) {
+  .parallax video {
+    transform: none; /* disable for smaller screens if performance is bad */
+  }
+}
+
+/* Default (desktop/tablet) */
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Alternate light background sections */
+.section {
+  background: #fdfde3; /* your light cream color */
+  color: #333;
+}
+
+/* Mobile view fix */
+@media (max-width: 768px) {
+  /* Disable parallax but keep different backgrounds */
+  #about.parallax,
+  #projects.parallax {
+    background: #000; /* black background on mobile */
+    background-attachment: scroll;
+  }
+
+  #skills.parallax,
+  #contact.parallax {
+    background: #fdfde3; /* light cream */
+    background-attachment: scroll;
+    color: #333;
+  }
+}
+
+
+
+
+
+  
+  
