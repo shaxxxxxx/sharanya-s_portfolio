@@ -45,7 +45,7 @@ It showcases my skills, projects, and achievements in a clean and responsive des
 
 ## 📸 Screenshots
 ### Home Section
-![Home Section](assets/screenshots/home.png)
+![Home Section]([assets/screenshots/home.png](https://github.com/shaxxxxxx/sharanya-s_portfolio/blob/main/Screenshot%202025-08-22%20at%2015.19.35.png))
 
 ### Skills Section
 ![Skills Section](assets/screenshots/skills.png)
