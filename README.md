@@ -61,7 +61,7 @@ portfolio/
 │ └── screenshots/
 
 ## 🌍 Live Demo
-🔗 [View Portfolio Website](https://eclectic-marshmallow-764764.netlify.app/)](https://eclectic-marshmallow-764764.netlify.app)  
+🔗 [View Portfolio Website](https://eclectic-marshmallow-764764.netlify.app)  
 
 ---
 
